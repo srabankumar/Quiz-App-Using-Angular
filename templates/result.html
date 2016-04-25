@@ -1,0 +1,42 @@
+<nav-template></nav-template>
+<div class="jumbotron text-center">
+	<h3>Your Result</h3>
+	<div >
+		<table class="display" cellspacing="0" width="100%" id="example1">
+		<thead>
+			<tr>
+			      
+			      <th class="head">Subject</th>
+			      <th class="head">Paper1</th>
+			      <th class="head">Paper2</th>
+			      <th class="head">Marks</th>
+   		 </tr>
+		</thead>
+       	 <tbody>
+           
+      		<tr>
+                <td>Maths:</td>
+                <td>{{userData.maths[0]}}</td>
+                <td>{{userData.maths[1]}}</td>
+                 <td>{{total_marks.maths}}</td>
+            </tr>
+            <tr>
+                <td>Science:</td>
+                <td>{{userData.Science[0]}}</td>
+                <td>{{userData.Science[1]}}</td>
+                <td>{{total_marks.Science}}</td>
+            </tr>
+            <tr>
+                <td>Computer science:</td>
+                <td>{{userData.Cse[0]}}</td>
+                 <td>{{userData.Cse[1]}}</td>
+                  <td>{{total_marks.Cse}}</td>
+            </tr>
+           
+      
+      	</tbody>
+    </table>
+		
+	</div>
+	
+</div>

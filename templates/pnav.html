@@ -1,0 +1,27 @@
+<nav class="navbar navbar-inverse "  ng-controller='MyController'>
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand">WELCOME</a>
+					<p>{{occupation}}</p>
+				</div>
+				<div>
+					<ul class="nav navbar-nav" >
+						<li ng-click="goToPage('pprofile',$event)">
+							<a>Profile</a>
+							
+						</li>
+						<li ng-click="goToPage('presult',$event)">
+							<a>MyClasses</a>
+							
+						</li>
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						<li ng-click="goToPage('logout',$event)">
+							<a><span class="glyphicon glyphicon glyphicon-log-out"></span>LogOut</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+</nav>

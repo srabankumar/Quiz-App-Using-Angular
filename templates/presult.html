@@ -1,0 +1,29 @@
+<pnav></pnav>
+<div class="jumbotron text-center">
+	<h3>WELCOME</h3>
+	<table class="display" cellspacing="0" width="100%" id="example1" datatable-setup >
+		<thead>
+			<tr>
+			      
+			      <th class="head">Class</th>
+			      <th class="head">Subject</th>
+			      <th class="head">Results</th>
+			      
+   		 </tr>
+		</thead>
+       	 <tbody >
+           
+      		<tr ng-repeat = "x in ArrTemp" >
+                <td>{{x[0]}}</td>
+                <td>{{x[1]}}</td>
+                <td> <button type="submit" class="btn btn-success btn-sm" ng-click="viewResult()" data-toggle="modal" data-target="#pModal">View Result</button></td>
+                 
+            </tr>
+           
+           
+      
+      	</tbody>
+    </table>
+	
+</div>
+<pmodal-template></pmodal-template>

@@ -1,0 +1,30 @@
+{
+	"Details":[
+	
+	{
+	"Name":"john",
+	"Class":"9",
+	"ID":"s1",
+	"Result":
+		{
+			"maths":90,
+			"science":93,
+			"computer_science":86	
+	
+		}
+	},
+	{
+	"Name":"riza",
+	"Class":"8",
+	"ID":"s2",
+	"Result":
+		{
+			"maths":90,
+			"science":93,
+			"computer_science":86	
+	
+		}
+	}
+	]
+
+}

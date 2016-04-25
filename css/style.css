@@ -1,0 +1,13 @@
+.dataTables_length, .dataTables_filter,#example1_paginate,.dataTables_info,#example2_paginate
+{
+	display:none;
+}
+.head
+{
+	text-align: center;
+}
+
+.no-footer{
+	border-bottom: 0px ;
+}
+

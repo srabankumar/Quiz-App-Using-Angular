@@ -1,0 +1,81 @@
+{
+	"maths": [{
+			"questions": "1 + 2",
+			"options": [1, 2, 3, 4],
+			"ans": "3"
+		}, {
+			"questions": "2 + 3",
+			"options": [5, 6, 10, 4],
+			"ans": "1"
+		}, {
+			"questions": "3 + 4",
+			"options": [8, 7, 3, 4],
+			"ans": "2"
+		}, {
+			"questions": "4 + 5",
+			"options": [1, 2, 9, 8],
+			"ans": "3"
+		}, {
+			"questions": "5 + 6",
+			"options": [13, 11, 12, 10],
+			"ans": "2"
+		}
+
+	],
+	"Science" :[
+			{
+			  "questions":"q1",
+			  "options":["a","b","c","d"],
+			  "ans":"1"
+			},
+			{
+				"questions":"q2",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"2"
+			},
+			{
+				"questions":"q3",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"3"
+			},
+			{
+				"questions":"q4",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"4"
+			},
+			{
+				"questions":"q5",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"1"
+			}
+			],
+	"Cse" :[
+			{
+			  "questions":"c1",
+			  "options":["a","b","c","d"],
+			  "ans":"1"
+			},
+			{
+				"questions":"c2",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"2"
+			},
+			{
+				"questions":"c3",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"3"
+			},
+			{
+				"questions":"c4",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"4"
+			},
+			{
+				"questions":"c5",
+			 	 "options":["a","b","c","d"],
+			  	"ans":"1"
+			}
+			]
+
+
+}

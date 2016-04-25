@@ -1,0 +1,51 @@
+<div id="pModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CLASS = {{clas}}</h4>
+        <h4 class="modal-title">SUBJECT = {{sub}}</h4>
+      </div>
+      <div class="modal-body">
+          
+              	<table datatable="" class="display" cellspacing="0" width="100%" id="example2" ng-if = "results.length" datatable-setup>
+					<thead>
+						<tr>
+			      
+					      <th class="head">Name</th>
+					      <th class="head">Marks</th>
+					      
+			      
+   		 				</tr>
+					</thead>
+       	 			<tbody >
+           
+      					<tr ng-repeat = "r in results" >
+			                <td>{{r.name}}</td>
+			                <td>{{r.marks}}</td>
+			                
+                 
+            			</tr>
+           
+           
+      
+      				</tbody>
+    			</table>  
+    			
+          
+          
+          
+          
+          
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+      
+    </div>
+</div>
+</div>

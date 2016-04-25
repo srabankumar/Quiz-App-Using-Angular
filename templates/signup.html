@@ -1,0 +1,95 @@
+<login-template></login-template>
+<div class="container">
+	<div class="row">
+		<div class="inputDiv col-md-6 col-md-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong class="">Register</strong>
+
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" name="signup" ng-submit="submitForm(signup.$valid)" novalidate>
+						<div class="form-group">
+							<label for="name" class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" ng-model="usr.name" id="name" placeholder="Name" required="" name="firstname">
+								
+							</div>
+						</div>
+
+						<div class="form-group"  ng-class="{ 'has-error' : signup.mail.$invalid && !signup.mail.$pristine }">
+							<label for="mail" class="col-sm-3 control-label">E-mail</label>
+							<div class="col-sm-9">
+								<input type="email" class="form-control" ng-model="usr.email" id="mail" placeholder="E-mail" required="" name="mail">
+								<p ng-show="signup.mail.$invalid && !signup.mail.$pristine" class="help-block">Enter a valid email.</p>
+							</div>
+						</div>
+
+
+						<div class="form-group" ng-class="{ 'has-error' : signup.profession.$invalid && !signup.profession.$pristine }">
+							<label for="pro" class="col-sm-3 control-label">Profession</label>
+							
+							<div class="col-sm-9" >
+								<select class="form-control" ng-model="usr.pro"  ng-change="profession()" name="profession" ng-init="usr.pro = 'professor'">
+									        
+											<option value="professor" >Professor</option>
+											<option value="Student">Student</option>
+											
+								</select>
+							</div>
+							<span class="error" ng-show="signup.profession.$error.required">Required!</span>
+
+						</div>
+						<div class="form-group" ng-if="student_flag == 1">
+							
+							<label for="pro" class="col-sm-3 control-label" >Class</label>
+							
+								<label class="inline-block col-md-2">
+										<input class="" type="radio" name="class" ng-model="usr.clas" id="seven" value="7" ng-required="!usr.clas"/>
+										<label for="seven" class="text-primary">7</label>
+								 </label>
+								 <label class="inline-block col-md-2">
+										<input class="" type="radio" name="class" ng-model="usr.clas" id="eight" value="8" ng-required="!usr.clas" />
+										<label for="eight" class="text-primary">8</label>
+								 </label>
+								 <label class="inline-block col-md-2">
+										<input class="" type="radio" name="class" ng-model="usr.clas" id="nine" value="9" ng-required="!usr.clas"/>
+										<label for="nine" class="text-primary">9</label>
+								 </label>
+								 <label class="inline-block col-md-2">
+										<input class="" type="radio" name="class" ng-model="usr.clas" id="ten" value="10" ng-required="!usr.clas"/>
+										<label for="ten" class="text-primary">10</label>
+								 </label>
+						
+							
+						</div>
+						<div class="form-group"ng-class="{ 'has-error' : signup.username.$invalid && !signup.username.$pristine }">
+							<label for="user" class="col-sm-3 control-label">UserName</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" ng-model="usr.user" id="user" placeholder="Username" required="" name="username">
+								
+            					<p ng-show="signup.username.$invalid && !signup.username.$pristine" class="help-block">username is necessary</p>
+							</div>
+						</div>
+						<div class="form-group"  ng-class="{ 'has-error' : signup.pass.$invalid && !signup.pass.$pristine }">
+							<label for="pass" class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" ng-model="usr.pass" id="pass" placeholder="password" required="" name="pass"  ng-minlength="8" ng-maxlength="15">
+								<p ng-show="signup.pass.$error.minlength" class="help-block">Password is too short.</p>
+            					<p ng-show="signup.pass.$error.maxlength" class="help-block">Password is too long.</p>
+            					
+							</div>
+						</div>
+						 <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-sm" data-toggle="modal">Sign Up</button>
+                                <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                            </div>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<modal-template></modal-template>
