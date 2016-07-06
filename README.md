@@ -17,4 +17,4 @@ Steps to run the App
   2. Type ```node server.js``` </br>
   3. Go to your browser and type ```localhost:3000``` and you will see the app is running .</br>
 
-This app is stil under development. :)
+This app is still under development. :)
