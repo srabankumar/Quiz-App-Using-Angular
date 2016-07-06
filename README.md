@@ -10,7 +10,7 @@ App will run in ```localhost:3000```
 Steps to run the App
 =====================
 <b>Prerequisite:</b></br>
-  1.  Node.js is necessary to run the App.So you need to install node.js .</br>
+  1.  ```Node.js``` is necessary to run the App.So you need to install node.js .</br>
       
 <b>Steps:</b></br>
   1. Go to the root folder using command prompt.</br>
