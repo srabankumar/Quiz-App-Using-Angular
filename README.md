@@ -15,4 +15,6 @@ Steps to run the App
 <b>Steps:</b></br>
   1. Go to the root folder using command prompt.</br>
   2. Type ```node server.js``` </br>
-  3. Go to your browser and type ```localhost:3000``` and you will see the app is running .
+  3. Go to your browser and type ```localhost:3000``` and you will see the app is running .</br>
+
+This app is stil under development. :)
