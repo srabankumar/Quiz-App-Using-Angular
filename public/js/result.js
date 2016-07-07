@@ -2,7 +2,7 @@ app.controller('resultController',['$scope','dataFactory','servicefactory', func
 {
 	
 	$scope.flag.user = false;
-	$scope.name = dataFactory.getdata();
+	$scope.name = dataFactory.getUserData().name;
 	var userinfo = servicefactory.userinfo ();
 	$scope.userData = {"maths":[],"Science":[],"Cse":[]};
 	//$scope.userData = {};

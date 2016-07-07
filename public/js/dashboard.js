@@ -2,17 +2,18 @@ app.controller('dashboardController',['$scope','dataFactory','servicefactory', f
 {
 	
 	$scope.flag.user = false;
-	$scope.name = dataFactory.getdata();
-	$scope.occupation = dataFactory.getProfession();
-	$scope.clss = dataFactory.getClass();
+    console.log(dataFactory.getUserData());
+	$scope.id = dataFactory.getUserData().id;
+	/*$scope.occupation = dataFactory.getProfession();
+	$scope.clss = dataFactory.getClass();*/
 
-	/*var userinfo = servicefactory.userinfo ();
+    var userinfo = servicefactory.userinfo ();
 	$scope.userData = {};
 	function display(useradata)
 	{
 		var user1 = useradata.filter(function(obj)
 		{
-			return(obj.Name == $scope.name)
+			return(obj.ID == $scope.id)
 		}) 
 		if(user1[0])
 		{
@@ -35,7 +36,7 @@ app.controller('dashboardController',['$scope','dataFactory','servicefactory', f
 		
 		console.log("No Data Found")
 	})
-	*/	
+	
 	
 }]);
 

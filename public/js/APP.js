@@ -27,7 +27,7 @@ app.config(function($routeProvider){
 	}) .when("/dashboard",{
 		templateUrl : "templates/dashboard.html",
 		controller :"dashboardController",
-		resolve :{
+		/*resolve :{
 			userData : function($localStorage,dataFactory){
 				console.log("working");
 				var data = {};
@@ -38,7 +38,7 @@ app.config(function($routeProvider){
 				 return data;
 				
 			}
-		}
+		}*/
 		
 		
 	}) .when("/profile",{

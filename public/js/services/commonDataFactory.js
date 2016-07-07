@@ -25,7 +25,8 @@ app.factory("dataFactory",function( $localStorage,$sessionStorage){
     {
         return myUserData;
     }
-    commondata.getdata = function(){
+    
+   /* commondata.getdata = function(){
     	return $sessionStorage.name;
     };
     commondata.getProfession = function()
@@ -50,7 +51,7 @@ app.factory("dataFactory",function( $localStorage,$sessionStorage){
 	{
 		//console.log($localStorage.users)
 		return $localStorage.users;
-	};
+	};*/
 	commondata.getScore = function(sub)
 	{
 		//console.log(netScore[sub]);

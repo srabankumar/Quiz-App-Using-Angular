@@ -19,7 +19,7 @@ app.factory("servicefactory",["$http","dataFactory",function($http,dataFactory){
 		
 		
 		//console.log("excuted")
-		return $http.get("./mockData/userInfo.json");
+		return $http.get(serviceURL+"/userInfo");
 		
 	};
 	services.getquestions = function()

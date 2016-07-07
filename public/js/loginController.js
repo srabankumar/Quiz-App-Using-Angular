@@ -17,8 +17,8 @@ function($scope, $location, $http, servicefactory,dataFactory) {
 			})
 			if(user[0]) {
 				
-				dataFactory.setdata(user[0]);
-				var profsn = dataFactory.getProfession();
+				dataFactory.setUserData(user[0]);
+				var profsn = dataFactory.getUserData().profession;
 				console.log(profsn);
 				if(profsn == "professor")
 				{
@@ -43,7 +43,7 @@ function($scope, $location, $http, servicefactory,dataFactory) {
 		//console.log(servicefactory.login());
         data1.then(function(res){
              myData = res.data.userInfo;
-            dataFactory.setUserData(myData);
+            
             check(myData);
             
         });

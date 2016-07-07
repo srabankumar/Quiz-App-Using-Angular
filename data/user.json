@@ -7,18 +7,14 @@
         },
         {
             "name": "john",
-            "pass":"john"
+            "pass":"john",
+            "id":"Id_001",
+            "profession":"student"
         },
         {
             "name": "max",
             "pass":"max"
         },
-        	
-	   {
-		"name" :"john",
-		"pass" :"john"
-	
-	   },
 	   {
 		"name" :"riza",
 		"pass" :"riza"
