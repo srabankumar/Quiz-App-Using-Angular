@@ -19,9 +19,6 @@ app.get('/questions',function(req,res){
     res.send(JSON.stringify(questions));
 })
 
-/*app.use('/#/signup',function(req,res){
-    res.send(JSON.stringify(data));
-});*/
 
 app.use(express.static('public'));
 app.listen(3000);
