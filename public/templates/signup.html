@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-3 control-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" ng-model="usr.name" id="name" placeholder="Name" required="" name="firstname">
+								<input type="text" class="form-control" ng-model="usr.name" id="name" placeholder="Name" required="" name="firstname" value="sraban">
 								
 							</div>
 						</div>
@@ -20,7 +20,7 @@
 						<div class="form-group"  ng-class="{ 'has-error' : signup.mail.$invalid && !signup.mail.$pristine }">
 							<label for="mail" class="col-sm-3 control-label">E-mail</label>
 							<div class="col-sm-9">
-								<input type="email" class="form-control" ng-model="usr.email" id="mail" placeholder="E-mail" required="" name="mail">
+								<input type="email" class="form-control" ng-model="usr.email" id="mail" placeholder="E-mail" required="" name="mail" value="john@gmail.com">
 								<p ng-show="signup.mail.$invalid && !signup.mail.$pristine" class="help-block">Enter a valid email.</p>
 							</div>
 						</div>
@@ -66,7 +66,7 @@
 						<div class="form-group"ng-class="{ 'has-error' : signup.username.$invalid && !signup.username.$pristine }">
 							<label for="user" class="col-sm-3 control-label">UserName</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" ng-model="usr.user" id="user" placeholder="Username" required="" name="username">
+								<input type="text" class="form-control" ng-model="usr.user" id="user" placeholder="Username" required="" name="username" value="sraban">
 								
             					<p ng-show="signup.username.$invalid && !signup.username.$pristine" class="help-block">username is necessary</p>
 							</div>
@@ -74,7 +74,7 @@
 						<div class="form-group"  ng-class="{ 'has-error' : signup.pass.$invalid && !signup.pass.$pristine }">
 							<label for="pass" class="col-sm-3 control-label">Password</label>
 							<div class="col-sm-9">
-								<input type="password" class="form-control" ng-model="usr.pass" id="pass" placeholder="password" required="" name="pass"  ng-minlength="8" ng-maxlength="15">
+								<input type="password" class="form-control" ng-model="usr.pass" id="pass" placeholder="password" required="" name="pass"  ng-minlength="8" ng-maxlength="15" value="sraban">
 								<p ng-show="signup.pass.$error.minlength" class="help-block">Password is too short.</p>
             					<p ng-show="signup.pass.$error.maxlength" class="help-block">Password is too long.</p>
             					

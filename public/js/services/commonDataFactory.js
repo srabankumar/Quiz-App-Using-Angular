@@ -14,7 +14,8 @@ app.factory("dataFactory",function( $localStorage,$sessionStorage){
 	$sessionStorage.netScore = {'maths':[],'Science':[],'Cse':[]};
 	var subject = null;
 	var examName = null,
-        myUserData = null;
+        myUserData = null,
+        studentDetails = null;
 	//var counter = {"count":0}
     
     commondata.setUserData = function(data)
@@ -100,5 +101,17 @@ app.factory("dataFactory",function( $localStorage,$sessionStorage){
 	{
 		return counter.count;
 	}*/
+    
+    commondata.setStudentDetails = function(student)
+    {
+      studentDetails = student;
+    
+    }
+    commondata.getStudentDetails = function()
+    {
+         return studentDetails;
+    
+    }
+    
 	return commondata;
 });

@@ -1,4 +1,4 @@
-app.controller("signupController",["$scope","dataFactory","$rootScope",function($scope,dataFactory,$rootScope){
+app.controller("signupController",["$scope","dataFactory","$rootScope",'servicefactory','$route',function($scope,dataFactory,$rootScope,servicefactory,$route){
 	//$scope.usr.pro = "student";
 	$scope.profession = function()
 	{
@@ -13,7 +13,7 @@ app.controller("signupController",["$scope","dataFactory","$rootScope",function(
 		}
 	}
 		
-
+  
         
    var setvalue = function()
     {
@@ -25,9 +25,35 @@ app.controller("signupController",["$scope","dataFactory","$rootScope",function(
 	    user.email = $scope.usr.email;
 	    user.name = $scope.usr.user;
 	    user.pass = $scope.usr.pass;
+        
 	   console.log(user);
-	   dataFactory.setusers(user);
-	   $scope.message = "Registered Successfully";
+	   //dataFactory.setusers(user); 
+        
+    servicefactory.signupResult(user).then(function(res){
+      var message = res.data.message;
+     if(message == "OK")
+     {
+        $scope.message = "Registered Successfully";
+         //$route.reload();
+       $("#name").val("");
+         $("#mail").val("");
+         $("#user").val("");
+         $("#pass").val("");
+         $scope.usr.pro = "professor";
+         $rootScope.student_flag =0;
+         $scope.usr.clas = 0 ;
+         
+     }
+        else
+        {
+           $scope.message = message ;
+        
+        }
+    
+    
+    })
+        
+	   
 	   $scope.buttonmsg = "close";
 	   //alert("successful")
 	   $('#myModal').modal("show");

@@ -3,7 +3,7 @@ app.controller('dashboardController',['$scope','dataFactory','servicefactory', f
 	
 	$scope.flag.user = false;
     console.log(dataFactory.getUserData());
-	$scope.id = dataFactory.getUserData().id;
+	$scope.mail = dataFactory.getUserData().mail;
 	/*$scope.occupation = dataFactory.getProfession();
 	$scope.clss = dataFactory.getClass();*/
 
@@ -13,14 +13,14 @@ app.controller('dashboardController',['$scope','dataFactory','servicefactory', f
 	{
 		var user1 = useradata.filter(function(obj)
 		{
-			return(obj.ID == $scope.id)
+			return(obj.mail == $scope.mail)
 		}) 
 		if(user1[0])
 		{
-			
+			dataFactory.setStudentDetails(user1[0]);
 			$scope.userData.first = user1[0].Name;
 			$scope.userData.class1= user1[0].Class;
-			$scope.userData.id= user1[0].ID;
+			$scope.userData.mail= user1[0].mail;
 
 			//$('#example').DataTable();
 		}
@@ -29,7 +29,9 @@ app.controller('dashboardController',['$scope','dataFactory','servicefactory', f
 	}
 	userinfo.then(function(response)
 	{ 
+        console.log(response.data.Details);
 		var useraData = response.data.Details;
+        console.log(typeof(useraData));
 		display(useraData);
 	},function(error)
 	{

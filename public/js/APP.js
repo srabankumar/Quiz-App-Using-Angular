@@ -68,6 +68,22 @@ app.config(function($routeProvider){
 	}) .when("/presult",{
 		templateUrl :"templates/presult.html",
 		controller :"pResultController",
+        resolve:{
+        "mySubjects":function(servicefactory)
+            {
+            
+           var subCall =  servicefactory.getMySubjects();
+            return subCall.then(function(response)                  {
+                   return response.data;
+                });
+               
+            }
+            
+            
+            }
+        
+        
+        
 		
 		
 	}).when("/logout",{

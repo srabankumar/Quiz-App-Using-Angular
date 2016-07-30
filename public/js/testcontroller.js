@@ -16,11 +16,40 @@ app.controller('testController',['$scope','servicefactory','$rootScope','dataFac
 	$scope.givetest=function(sub){                   //trigger at the time of click event of test button
 		//console.log("hiii");
 		$rootScope.btnflag = 0;
+        
+var studentClass = dataFactory.getStudentDetails().Class,
+classMap = 
+            {
+            "7" :"seven",
+            "8":"eight",
+            "9":"nine",
+            "10":"ten"    
+            
+            },
+studentInfo = {"class":classMap[studentClass],
+               "subject":sub};
+        
+//console.log(studentInfo);        
+  //console.log(classMap[dataFactory.getStudentDetails().Class]);    
+        
+        
 		var obj = servicefactory.getquestions();
 		obj.then(function(response){
+            var questionBank = response.data.questions;
+        //console.log(questionBank[studentInfo.class]);
+          var classQuestions = questionBank.filter(function(obj)
+                                                   {
+          
+          return Object.keys(obj)[0] == studentInfo.class ;
+          
+          
+          })  ;
+            //console.log(classQuestions);
+            
 			//console.log("1");
-            console.log(response.data);
-			exam.question=response.data;
+            //console.log(response.data);
+			exam.question=classQuestions[0][studentInfo.class];
+            console.log(exam.question);
 			questions(sub);
 			
 			
@@ -65,12 +94,12 @@ app.controller('testController',['$scope','servicefactory','$rootScope','dataFac
 					
 				//}
 			}
-			if(sub =="sc")
+			if(sub =="science")
 			{
 				//count.Science+=1;
 				//console.log("1");
 				no.qno = 0;
-				map.exam = "Science";
+				map.exam = "science";
 				//counter(map.exam);
 				map.length = exam.question[map.exam].length;
 				uniqueNoGenerator();
@@ -78,10 +107,10 @@ app.controller('testController',['$scope','servicefactory','$rootScope','dataFac
 			    getquestion();
 					
 			}
-			if(sub =="csc"){
+			if(sub =="cse"){
 				//count.Cse+=1;
 				no.qno = 0;
-				map.exam = "Cse";
+				map.exam = "cse";
 				//counter(map.exam);
 				map.length = exam.question[map.exam].length;
 				uniqueNoGenerator();

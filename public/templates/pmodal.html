@@ -5,10 +5,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">CLASS = {{clas}}</h4>
-        <h4 class="modal-title">SUBJECT = {{sub}}</h4>
+        <h4 class="modal-title">CLASS = {{classInfo.clas}}</h4>
+        <h4 class="modal-title">SUBJECT = {{classInfo.sub}}</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" ng-show="resultFlag">
           
               	<table datatable="" class="display" cellspacing="0" width="100%" id="example2" ng-if = "results.length" datatable-setup>
 					<thead>
@@ -42,8 +42,63 @@
           
           
       </div>
+      
+      
+   <div class="modal-body" ng-hide="resultFlag" style="height:100% !important">
+          
+      <form class="form-horizontal" role="form" name="add" ng-submit="addmyquestion(add.$valid)" novalidate>
+                        <div class="form-group col-md-12"  ng-class="{ 'has-error' : add.question.$invalid && !add.question.$pristine }">  
+                            <label for="question" class="col-sm-3 control-label col-md-3 addquestion">Question</label>
+                            <div class="col-sm-9 col-md-9">
+                                <textarea ng-model="Question.questions" class="form-control" id="question" placeholder="Type question here" required="" name="question"></textarea>
+                                <p ng-show="add.question.$invalid && !add.question.$pristine" class="help-block">Question is necessary</p>
+                            </div>
+                        </div>
+		<div class="form-group col-md-12" ng-class="{ 'has-error' : add.option.$invalid && !add.option.$pristine }">
+							
+							<label for="option" class="col-sm-3 col-md-3 control-label addquestion" >Options</label>
+<div class="col-md-9">							
+								<label class="inline-block col-md-10">
+										<input class="col-md-2" type="radio" name="option" ng-model="Question.ans" id="firstOption" value="1"/>
+										<input type="text"  class="text-primary col-md-10" ng-model="Question.firstOption"name="firstOption" />
+								 </label></br>
+													<label class="inline-block col-md-10">
+										<input class="col-md-2" type="radio" name="option" ng-model="Question.ans" id="secondOption" value="2"/>
+										<input type="text"  class="text-primary col-md-10" ng-model="Question.secondOption" name="secondOption"/>
+								 </label></br>
+										<label class="inline-block col-md-10">
+										<input class="col-md-2" type="radio" name="option" ng-model="Question.ans" id="thirdOption" value="3"/>
+										<input type="text"  class="text-primary col-md-10" ng-model="Question.thirdOption"name="thirdOption" />
+								 </label></br>
+						<label class="inline-block col-md-10">
+										<input class="col-md-2" type="radio" name="option" ng-model="Question.ans" id="fourthOption" value="4"/>
+										<input type="text"  class="text-primary col-md-10" ng-model="Question.fourthOption"name="fourthOption" />
+								 </label>
+						
+							
+						</div>
+                       </div>  
+   	 <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-sm">Sign Up</button>
+                               
+                            </div>
+                        </div>
+                    </form>
+    			
+          
+          
+          
+          
+         
+          
+          
+      </div>      
+      
+      
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+
       </div>
       
     </div>
