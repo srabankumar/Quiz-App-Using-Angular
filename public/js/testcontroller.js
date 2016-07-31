@@ -269,7 +269,19 @@ studentInfo = {"class":classMap[studentClass],
 		
 		$scope.resultMessage = function()
 		{
-			dataFactory.setScore( score.netscore,map.exam);
+			//dataFactory.setScore( score.netscore,map.exam);
+            var examMap = {
+            "maths":"Math",
+            "science":"Science",
+            "cse":"Computer_science"
+            }
+            
+            var examDetails = {
+                "score":score.netscore,
+                "name":examMap[map.exam],
+                "Email":dataFactory.getUserData().mail
+            }
+            servicefactory.setResult(examDetails);
 			$rootScope.btnflag = 1;
 		    $scope.question_no = " ";
 		    $scope.skipFlag = 0;
@@ -432,7 +444,7 @@ studentInfo = {"class":classMap[studentClass],
 							getquestion();
 						}
 		 				break;
-		 		case "Science":
+		 		case "science":
 		 		       //console.log(no.qno);
 		 				if(no.qno == 1)
 		 				{
@@ -444,7 +456,7 @@ studentInfo = {"class":classMap[studentClass],
 		 				}
 		 				getquestion();
 		 				break;
-		 		case "Cse":
+		 		case "cse":
 		 		       //console.log(no.qno);
 		 		        if(no.qno == 1)
 		 				{

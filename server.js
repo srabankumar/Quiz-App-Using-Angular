@@ -45,7 +45,7 @@ var checkUser = function(email)
         
        for(var i = 0 ;i<users.length;i++)
        {
-           console.log(users[i].mail === email );
+          
            
             if(users[i].mail === email)
          {
@@ -97,6 +97,11 @@ app.post('/signup',function(req,res,next){
    // console.log(req.body);
     var newUserDetails = {};
     var newUserCrendentials  = {};
+    if(req.body.profession == "Student")
+        {
+            newUserDetails.Result = {"Math":null,"Science":null,"Computer_science":null}
+            
+        }
     newUserDetails.Name = newUserCrendentials.name =req.body.first ;
     newUserDetails.Class = req.body.cls;
     newUserDetails.mail = newUserCrendentials.mail = req.body.email;
@@ -167,7 +172,7 @@ fs.readFile('./data/userInfo.json','utf-8',function(err,data){
        var detailsData = JSON.parse(data),
            allDetails = detailsData.Details;
         
-        console.log(req.body.Email);
+        
       for(i in allDetails)
       {
           //console.log(i);
@@ -256,6 +261,12 @@ app.post('/addquestion',function(req,res){
     
     fs.readFile('./data/QuestionBank.json',function(err,data)
                {
+        if(err)
+            {
+                res.send(" Network error");
+            }
+        else
+            {
         var Allquestions = JSON.parse(data);
         var classquestions = Allquestions.questions;
         var myRequiredObj = null;
@@ -275,8 +286,52 @@ app.post('/addquestion',function(req,res){
         //console.log(JSON.stringify(Allquestions));
         fs.writeFileSync('./data/QuestionBank.json',JSON.stringify(Allquestions));
         res.send("OK");
+            }
     })
     
+})
+
+app.post('/setResult',function(req,res){
+    
+   fs.readFile('./data/userInfo.json',function(err,data)
+              {
+       
+       if(err)
+           {
+               res.send("Unable to fetch data")
+           }
+       else
+           {
+               var totalDetails = JSON.parse(data),
+                   allStudents = totalDetails.Details,
+                   sub = req.body.name,
+                   requiredStudent = allStudents.filter(function(obj){
+                   
+                   return (obj.mail == req.body.Email)
+                   
+               });
+               
+               requiredStudent[0].Result[sub] = req.body.score;
+                fs.writeFileSync('./data/userInfo.json',JSON.stringify(totalDetails));
+           }
+       
+   })
+    
+});
+
+app.get('/getMyResult',function(req,res){
+    fs.readFile('./data/userInfo.json',function(err,data){
+        if(err)
+            {
+                res.send("Unable to fetch details");
+            }
+        else{
+            
+            var totalDetails = JSON.parse(data),
+                   allStudents = totalDetails.Details;
+            res.send(allStudents)
+        }
+    })
 })
 
 
@@ -285,4 +340,7 @@ app.post('/addquestion',function(req,res){
 
 
 
-app.listen(3000);
+app.listen(3000,function(){
+  console.log('App is running');
+
+});

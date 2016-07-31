@@ -1,12 +1,12 @@
-app.controller('resultController',['$scope','dataFactory','servicefactory', function($scope,dataFactory,servicefactory)
+app.controller('resultController',['$scope','dataFactory','servicefactory','myResults', function($scope,dataFactory,servicefactory,myResults)
 {
 	
 	$scope.flag.user = false;
 	$scope.name = dataFactory.getUserData().name;
-	var userinfo = servicefactory.userinfo ();
+	//var userinfo = servicefactory.userinfo ();
 	$scope.userData = {"maths":[],"Science":[],"Cse":[]};
 	//$scope.userData = {};
-	$scope.total_marks = {"maths":0,"Science":0,"Cse":0};
+	//$scope.total_marks = {"maths":0,"Science":0,"Cse":0};
 	//var count = {"math":0,"science":0,"cse":0}
 	function display()
 	{
@@ -86,7 +86,7 @@ app.controller('resultController',['$scope','dataFactory','servicefactory', func
 		
 		
 	};
-	userinfo.then(function(response)
+	/*userinfo.then(function(response)
 	{ 
 		var useraData = response.data.Details;
 		display();
@@ -95,7 +95,47 @@ app.controller('resultController',['$scope','dataFactory','servicefactory', func
 	{
 		
 		console.log("No Data Found")
-	});
+	}); */
+var displayResults  = function(resultArray)
+{
+    var requiredStudent = resultArray.filter(function(obj){
+        return obj.mail == dataFactory.getUserData().mail;
+    });
+    
+     $scope.total_marks = {};
+    if(requiredStudent[0].Result["Math"])
+        {
+             $scope.total_marks["maths"] = requiredStudent[0].Result["Math"]  ;
+            
+        }
+    else
+    {
+        $scope.total_marks["maths"] = "Not done yet"
+    }
+       if(requiredStudent[0].Result["Science"])
+        {
+             $scope.total_marks["Science"] = requiredStudent[0].Result["Science"]  ;
+            
+        }
+    else
+    {
+        $scope.total_marks["Science"] = "Not done yet"
+    }
+       if(requiredStudent[0].Result["Computer_science"])
+        {
+             $scope.total_marks["Cse"] = requiredStudent[0].Result["Computer_science"]  ;
+            
+        }
+    else
+    {
+        $scope.total_marks["Cse"] = "Not done yet"
+    }
+}
+
+  displayResults(myResults);
+
+
+
 
     //display();
 	

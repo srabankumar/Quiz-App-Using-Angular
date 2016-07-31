@@ -1,7 +1,7 @@
 app.controller("pResultController",['$scope','dataFactory','servicefactory','$timeout','mySubjects',function($scope,dataFactory,servicefactory,$timeout,mySubjects)
 {
 	
-	
+	$scope.tableFlag = true;
 	$scope.ArrTemp = [];
 	$scope.results = [];
     $scope.classInfo  = {};
@@ -62,9 +62,10 @@ app.controller("pResultController",['$scope','dataFactory','servicefactory','$ti
 		});
            myClassStudents.forEach(function(student)
                                 {
+               console.log($scope.sub);
            var studentObj = {};
             studentObj.name = student.Name;
-            studentObj.marks = student.Result[$scope.sub];
+            studentObj.marks = student.Result[$scope.classInfo.sub];
             
             $scope.results.push(studentObj);
             console.log($scope.results);
@@ -126,7 +127,23 @@ app.controller("pResultController",['$scope','dataFactory','servicefactory','$ti
            
        };
        //console.log(questionDetails);
-        servicefactory.addQuestion(questionDetails);
+       var add =  servicefactory.addQuestion(questionDetails);
+        add.then(function(response){
+            console.log(response);
+          $scope.resultFlag = true;
+            $scope.tableFlag = false;
+            if(response.data == "OK")
+                {
+                    $scope.addMessage = "Your Question is Successfully Added";
+                    $scope.$$childHead.$$nextSibling.Question = {};
+                }
+            else
+            {
+                $scope.addMessage = response.data;
+                 $scope.$$childHead.$$nextSibling.Question = {};
+            }
+            
+        })
     }
     
     

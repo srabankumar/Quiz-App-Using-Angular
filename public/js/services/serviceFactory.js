@@ -88,6 +88,22 @@ app.factory("servicefactory",["$http","dataFactory",function($http,dataFactory){
             data:question
         });
     }
+    
+    services.setResult = function(score)
+    {
+        var setResultURL = serviceURL + '/setResult' ; 
+        return $http({
+            method:'POST',
+            url:setResultURL,
+            data:score
+        });
+    }
+    
+    services.getMyResult = function()
+    {
+        return $http.get(serviceURL+'/getMyResult');
+        
+    }
 	
 	
 	return services

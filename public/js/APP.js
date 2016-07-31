@@ -63,6 +63,17 @@ app.config(function($routeProvider){
 	}) .when("/result",{
 		templateUrl : "templates/result.html",
 		controller :"resultController",
+        resolve:{
+            "myResults":function(servicefactory)
+            {
+     var resultCall = servicefactory.getMyResult();
+                return resultCall.then(function(res){
+                    //console.log(res.data);
+                    return res.data;
+                });
+                
+            }
+        }
 		
 		
 	}) .when("/presult",{

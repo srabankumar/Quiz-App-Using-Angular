@@ -9,7 +9,7 @@
         <h4 class="modal-title">SUBJECT = {{classInfo.sub}}</h4>
       </div>
       <div class="modal-body" ng-show="resultFlag">
-          
+          <div ng-show="tableFlag">
               	<table datatable="" class="display" cellspacing="0" width="100%" id="example2" ng-if = "results.length" datatable-setup>
 					<thead>
 						<tr>
@@ -33,7 +33,10 @@
       
       				</tbody>
     			</table>  
-    			
+    		</div>
+          <div ng-hide="tableFlag">
+               {{addMessage}}
+          </div>
           
           
           
@@ -54,7 +57,7 @@
                                 <p ng-show="add.question.$invalid && !add.question.$pristine" class="help-block">Question is necessary</p>
                             </div>
                         </div>
-		<div class="form-group col-md-12" ng-class="{ 'has-error' : add.option.$invalid && !add.option.$pristine }">
+		<div class="form-group col-md-12" ng-class="{ 'has-error' : add.option.$invalid && !add.option.$pristine }" >
 							
 							<label for="option" class="col-sm-3 col-md-3 control-label addquestion" >Options</label>
 <div class="col-md-9">							
@@ -80,7 +83,7 @@
                        </div>  
    	 <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm">Sign Up</button>
+                                <button type="submit" class="btn btn-success btn-sm">Submit</button>
                                
                             </div>
                         </div>
