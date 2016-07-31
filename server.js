@@ -338,9 +338,4 @@ app.get('/getMyResult',function(req,res){
 
 
 
-
-
-app.listen(3000,function(){
-  console.log('App is running');
-
-});
+app.listen(3000,function(){console.log("App is running")});
