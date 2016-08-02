@@ -108,7 +108,7 @@ exports.signup = function(req,res)
   if(checkUser(newUserDetails.mail) == 0)
   {
     
-      console.log("original");
+     // console.log("original");
  fs.readFile('./data/userInfo.json','utf-8',function(err,data){
 
       var originalContent = JSON.parse(data);
@@ -251,7 +251,7 @@ exports.setResult = function(req,res)
                });
                
         requiredStudent[0].Result[sub] = req.body.score;
-         console.log(userInfoDetails);       fs.writeFileSync('./data/userInfo.json',JSON.stringify(userInfoDetails));
+              fs.writeFileSync('./data/userInfo.json',JSON.stringify(userInfoDetails));
       
 
 }
@@ -261,7 +261,7 @@ exports.getStudentResult = function(req,res)
 {
     retriveUserInfoDetails();
    res.header("Access-Control-Allow-Origin", "*");
-    console.log(userInfoDetails);
+   // console.log(userInfoDetails);
    var allStudents = userInfoDetails.Details;
     res.send(allStudents);
 

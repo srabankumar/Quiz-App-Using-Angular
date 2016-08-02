@@ -14,8 +14,9 @@ Steps to run the App
       
 <b>Steps:</b></br>
   1. Go to the root folder using command prompt.</br>
+  2. Type ```npm install``` to add the required dependencies. 
   2. Type ```node server.js``` </br>
   3. Go to your browser and type ```localhost:3000``` and you will see the app is running .</br>
-  4. Use ```Username = john and password = john ``` to login for now. 
+
 
 This app is still under development. :)
