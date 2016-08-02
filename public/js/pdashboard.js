@@ -8,6 +8,7 @@ app.controller('pdashboardController',['$scope','dataFactory','servicefactory', 
 	
 	$scope.add = function()
 	{
+        $scope.btnflag = 2;
 	    var message  ='<div>'+
 	    
 	    						'<table class="" cellspacing="4" width="100%" id="example1">'+

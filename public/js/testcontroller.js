@@ -87,6 +87,7 @@ studentInfo = {"class":classMap[studentClass],
 					map.length = exam.question[map.exam].length;
 					uniqueNoGenerator();
 					//console.log(q_no.no);
+               
 					getquestion();
 					
 					 
@@ -114,6 +115,7 @@ studentInfo = {"class":classMap[studentClass],
 				//counter(map.exam);
 				map.length = exam.question[map.exam].length;
 				uniqueNoGenerator();
+                 
 				//console.log(q_no.no);
 			    getquestion();
 			}
@@ -213,7 +215,7 @@ studentInfo = {"class":classMap[studentClass],
 			//console.log($rootScope.btnflag);
 			$scope.question_no = no.qno+1;
 			
-			if(no.qno<5)
+			if(no.qno<map.length)
 			{
 				   
 				    //console.log(q_no.no);
@@ -300,7 +302,7 @@ studentInfo = {"class":classMap[studentClass],
 		 	//console.log(arr);
 		 	for(var i = 0;i<map.length;i++)
 		 	{
-		 	var temp = Math.floor(Math.random()*5);
+		 	var temp = Math.floor(Math.random()*map.length);
 		 	//console.log(temp);
 		 	//arr.push(temp);
 		 	if(arr.length == 0)

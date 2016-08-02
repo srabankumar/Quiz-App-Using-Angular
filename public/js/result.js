@@ -103,7 +103,7 @@ var displayResults  = function(resultArray)
     });
     
      $scope.total_marks = {};
-    if(requiredStudent[0].Result["Math"])
+    if(requiredStudent[0].Result["Math"] || requiredStudent[0].Result["Math"] == 0)
         {
              $scope.total_marks["maths"] = requiredStudent[0].Result["Math"]  ;
             
@@ -112,7 +112,7 @@ var displayResults  = function(resultArray)
     {
         $scope.total_marks["maths"] = "Not done yet"
     }
-       if(requiredStudent[0].Result["Science"])
+       if(requiredStudent[0].Result["Science"] || requiredStudent[0].Result["Science"] == 0)
         {
              $scope.total_marks["Science"] = requiredStudent[0].Result["Science"]  ;
             
@@ -121,7 +121,7 @@ var displayResults  = function(resultArray)
     {
         $scope.total_marks["Science"] = "Not done yet"
     }
-       if(requiredStudent[0].Result["Computer_science"])
+       if(requiredStudent[0].Result["Computer_science"] || requiredStudent[0].Result["Computer_science"]== 0)
         {
              $scope.total_marks["Cse"] = requiredStudent[0].Result["Computer_science"]  ;
             
