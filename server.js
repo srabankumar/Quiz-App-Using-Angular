@@ -49,4 +49,4 @@ app.get('/getMyResult',portal.getStudentResult);
 
 
 
-app.listen(3000,function(){console.log("App is running")});
+app.listen(process.env.PORT || 5000);
