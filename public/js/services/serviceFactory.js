@@ -1,7 +1,7 @@
 app.factory("servicefactory",["$http","dataFactory",function($http,dataFactory){
 	
 	var services = {};
-    var serviceURL = "http://localhost:3000" ;
+    var serviceURL = "http://localhost:5000" ;
 	services.login = function()
 	{
 		
